@@ -1,0 +1,94 @@
+<!-- <div class="header">
+    <span>Exam Dashboard</span> <button class="btn">Start Simulation</button>
+  </div> -->
+
+<div class="mainview">
+  <div class="divphai">
+    <div class="headerdivphai">
+      <span
+        >Bài Thi | {{ created_at | date: 'dd/MM/yyyy' }} |
+        {{ question_num }} QUESTIONS</span
+      >
+    </div>
+    <div class="header_duoi">
+      <div class="divs_core">
+        <div class="divs_per">
+          <span>Điểm Số</span>
+          <span style="color: rgb(212, 13, 13);font-size: 60px"
+            >{{ score |number: '1.2-2' }}%</span
+          >
+          <span *ngIf="pass === false" style="text-align: center"
+            >Trượt Bài Thi</span
+          >
+          <span *ngIf="pass === true" style="text-align: center"
+            >Đỗ Bài Thi</span
+          >
+        </div>
+        <div class="btnduoi" (click)="clickRewviewTest()">
+          <button class="btn btn-success" style="width: 100%">
+            Xem lại bài thi
+          </button>
+        </div>
+      </div>
+      <div class="divs_graph">
+        <div class="bieu_do">
+          <div class="bieu_do_trai">
+             Thống Kê Điểm
+            <div class="sb correct">
+              <span>Đúng</span
+              ><span id="sbspan" style="background-color: #27AE60;">
+                {{ corect }}
+              </span>
+            </div>
+            <div class="sb incorrect">
+              <span style="text-align: left">Sai</span
+              ><span id="sbspan" style="background-color:#C0392B;">
+                {{ incorect }}
+              </span>
+            </div>
+            <div class="sb percentage">
+              <span>Tỉ Lệ</span
+              ><span id="sbspan" style="background-color: #2980B9;"
+                >{{ passPercen }} %</span
+              >
+            </div>
+          </div>
+          <div class="bieu_do_phai">
+            <div class="clearfix">
+              <div class="c100 p{{ passPercen }} big green">
+                <span>{{ passPercen }}%</span>
+                <div class="slice">
+                  <div class="bar"></div>
+                  <div class="fill"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="thong_ke">
+          <div class="tk thong_ke1">
+            <span class="tks">{{ timeperques }} Giây</span>
+            <span>Trung Bình Thời Gian </span>
+          </div>
+          <div class="tk thong_ke2">
+            <span class="tks">{{ totaltime }} Phút</span>
+            <span>Tổng Thời Gian</span>
+          </div>
+          <div class="tk thong_ke3">
+            <span class="tks"> {{ question_num }} Số Câu Hỏi</span>
+            <span
+              >{{ name | uppercase }} IN {{ minute | uppercase }} MINUTES</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="headerdivtrai">
+    <div>
+      <button class="btn" (click)="onBack()">
+        Back
+      </button>
+    </div>
+  </div>
+</div>

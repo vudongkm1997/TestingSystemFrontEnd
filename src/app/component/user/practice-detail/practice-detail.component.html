@@ -1,0 +1,81 @@
+<div class="tong">
+  <div class="card">
+    <div class="card-header text-center text-white bg-primary">
+      <h3>THÔNG TIN CHI TIẾT BÀI THI</h3>
+    </div>
+    <div class="card-body">
+      <ul class="list-group textview">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Tên bài thi: <strong class="text-muted">{{ practice[0][7] }}</strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Mã đề thi: <strong class="text-muted"> {{ practice[0][12] }} </strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Môn thi: <strong class="text-muted">{{ practice[0][1] }} </strong>
+        </li>
+        <li class="list-group-item">
+          Domain:
+          <div style="text-align: right" class="" *ngFor="let p of practice">
+            <label style="text-align: right">{{ p[3] }}</label>
+          </div>
+        </li>
+        <li class="list-group-item">
+          Chapter:
+          <div style="text-align: right" class="" *ngFor="let p of practice">
+            <label style="text-align: right">{{ p[2] }}</label>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Mô tả bài thi:
+          <strong class="text-muted">{{ practice[0][14] }} </strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Ngày tạo:
+          <strong class="text-muted">{{ practice[0][5] | date: 'dd/MM/yyyy' }}
+          </strong>
+        </li>
+        <li *ngIf="practice[0][8] != null || practice[0][8] != undefined" class="list-group-item d-flex justify-content-between align-items-center">
+          Ngày bắt đầu thi:
+          <strong class="text-muted">
+            {{ practice[0][8] | date: 'dd/MM/yyyy' }}
+          </strong>
+        </li>
+        <li *ngIf="practice[0][9] != null || practice[0][9] != undefined" class="list-group-item d-flex justify-content-between align-items-center">
+          Ngày kết thúc thi:
+          <strong class="text-muted">
+            {{ practice[0][9] | date: 'dd/MM/yyyy' }}
+          </strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Số lượng câu hỏi của bài thi:
+          <strong class="text-muted"> {{ practice[0][4] }} </strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          thời gian làm bài:
+          <strong class="text-muted"> {{ practice[0][13] }} </strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Số người đã thi: <strong class="text-muted"> </strong>
+        </li>
+      </ul>
+    </div>
+    <div class="card-footer">
+      <button (click)="clickVaoThi(practice[0][0])" type="button" class="btn btn-primary">
+        Bắt đầu thi
+      </button>
+      <button (click)="onBack()" type="button" class="btn btn-danger" style="margin-left: 5px">
+        Quay lại
+      </button>
+    </div>
+  </div>
+  <div class="noti" *ngIf="notificationVisibilityWhenDelete">
+    <div id="snackbard">
+      <div class="chu">Bạn có chắc muốn thi bài thi này không?</div>
+      <div class="yn">
+        <div id="bss1" (click)="oncg(true)">Yes</div>
+        <div id="bss2" (click)="oncg(false)">No</div>
+      </div>
+    </div>
+  </div>
+</div>

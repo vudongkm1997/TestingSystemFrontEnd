@@ -1,0 +1,28 @@
+.listnhanvien{
+    min-height: 300px;
+max-height: 350px;
+margin-bottom: 10px;
+overflow: scroll;
+-webkit-overflow-scrolling: touch;
+}
+// * {
+//     outline: 0px !important;
+//     ::-webkit-scrollbar {
+//       display: none;
+//     }
+//     ::-moz-scrollbar {
+//       display: none;
+//     }
+//     ::-ms-scrollbar {
+//       display: none;
+//     }
+//   }
+  .textview {
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .container {
+    -ms-overflow-style: none;
+    overflow: auto;
+    padding-bottom: 30px;
+  }

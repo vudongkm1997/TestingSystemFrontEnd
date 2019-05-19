@@ -1,0 +1,74 @@
+<div class="tong">
+  <div class="divtabletrai">
+    <div class="header"><span>CHI TIẾT BÀI THI </span></div>
+    <table class="table table-light">
+      <tr>
+        <th>Tên bài thi</th>
+        <th>{{ exam[0][7] }}</th>
+      </tr>
+      <tr>
+        <th>Bộ môn</th>
+        <th>{{ exam[0][1] }}</th>
+      </tr>
+      <tr>
+        <th>Chương</th>
+        <th>{{ exam[0][2] }}</th>
+      </tr>
+      <tr>
+        <th>Kĩ năng</th>
+        <th>{{ exam[0][3] }}</th>
+      </tr>
+      <tr>
+        <th>Ngày bắt đầu</th>
+        <th>{{ exam[0][8] | date: 'dd/MM/yyyy' }}</th>
+      </tr>
+      <tr>
+        <th>Ngày kết thúc</th>
+        <th>{{ exam[0][9] | date: 'dd/MM/yyyy' }}</th>
+      </tr>
+      <tr>
+        <th>Số câu hỏi</th>
+        <th>{{ exam[0][4] }}</th>
+      </tr>
+      <tr>
+        <th>Mô tả</th>
+        <th>{{ exam[0][14] }}</th>
+      </tr>
+      <tr>
+        <th>Số lần thi</th>
+        <th>{{ exam[0][6] }}</th>
+      </tr>
+      <tr>
+        <th>Điểm % đỗ</th>
+        <th>{{ exam[0][10] }}</th>
+      </tr>
+      <tr>
+        <th>Thời gian làm bài</th>
+        <th>{{ exam[0][13] }}</th>
+      </tr>
+      <tr style="margin: 5px;">
+        <button (click)="clickVaoThi()" type="button" class="btn btn-primary">
+          Bắt đầu thi
+        </button>
+        <button
+          (click)="onBack()"
+          type="button"
+          class="btn btn-danger"
+          style="margin-left: 5px"
+        >
+          Quay lại
+        </button>
+      </tr>
+    </table>
+  </div>
+
+  <div class="noti" *ngIf="notificationVisibilityWhenDelete">
+    <div id="snackbard">
+      <div class="chu">Bạn có chắc muốn thi bài thi này không?</div>
+      <div class="yn">
+        <div id="bss1" (click)="oncg(true)">Yes</div>
+        <div id="bss2" (click)="oncg(false)">No</div>
+      </div>
+    </div>
+  </div>
+</div>
